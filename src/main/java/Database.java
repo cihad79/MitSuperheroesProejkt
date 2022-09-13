@@ -1,10 +1,25 @@
 public class Database {
-    Superhelt superhelt1 = new Superhelt("Superman", "flyve", "Clark kent", 2001, true, 5000);
-    Superhelt superhelt2 = new Superhelt("Superman", "flyve", "Clark kent", 2001, true, 5000);
-    Superhelt superhelt3 = new Superhelt("Superman", "flyve", "Clark kent", 2001, true, 5000);
-    Superhelt superhelt4 = new Superhelt("Superman", "flyve", "Clark kent", 2001, true, 5000);
-    Superhelt superhelt5 = new Superhelt("Superman", "flyve", "Clark kent", 2001, true, 5000);
+    private Superhelt[] superhelte;
+    private int antalSuperhelte;
 
-    Superhelt[] superhelte = {superhelt1, superhelt2,superhelt3, superhelt4, superhelt5};
+    public Database(){
+        superhelte = new Superhelt[5];
+        antalSuperhelte = 0;
+    }
+    public void createSuperhelt(String superHeltnavn, String superkræft, String virkeligenavn, int oprindelsesår,
+                               boolean ermenneske, double styrke) {
+        Superhelt superhelt = new Superhelt(superHeltnavn, superkræft, virkeligenavn, oprindelsesår, ermenneske, styrke);
+    superhelte[antalSuperhelte++] = superhelt;
+        System.out.println(superhelt);
+        System.out.println("antallet af superhelte i databasen" + antalSuperhelte);
+
+    }
+        public int getAntalSuperhelte(){
+        return antalSuperhelte;
 
 }
+
+
+
+}
+
